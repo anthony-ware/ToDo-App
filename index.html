@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ToDo List </title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script src= 'js/app.js'></script>
+</head>
+<body ng-app='todoApp'>
+	<div ng-controller= 'mainCtrl' class="list">
+			<h1>My TODO's</h1>
+			<div ng-repeat='task in tasks'>
+				<input type="checkbox" ng-model='todo.completed'/>
+				<label class="editing-label" ng-hide='editing'>{{todo.name}}</label>
+				<input type="editing-label" ng-show='!editing' ng-model='todo.name' type="text">
+				<div class="actions">
+					<a href="" ng-click='editing=!editing'>edit</a>
+					<a href="" ng-click=work()>save</a>
+					<a href="" class="delete">delete</a>
+				</div>
+			</div>
+	</div>
+	
+</body>
+</html>
