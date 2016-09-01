@@ -1,7 +1,9 @@
 angular.module('todoApp',[])
 
 .controller('mainCtrl',function($scope){
-	$scope.helloWorld=function(){};
+	$scope.edited=function(){
+		alert('A change has been made!');
+	};
 
 $scope.tasks= [
 {'name': 'Clean the house'},

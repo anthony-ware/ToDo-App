@@ -43,7 +43,7 @@ a {
     .list .item.editing .actions {
       margin-top: 17px; }
   .list .edited label:after {
-    content: " edited";
+    content: " updated";
     text-transform: uppercase;
     color: #a7b9c4;
     font-size: 14px;
