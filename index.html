@@ -12,7 +12,7 @@
 			<div ng-repeat='task in tasks'>
 				<input type="checkbox" ng-model='task.completed'/>
 				<label ng-hide='editing' class="editing-label">{{task.name}}</label>
-				<input ng-show='!editing' class="editing-label"  ng-model='task.name' type="text">
+				<input ng-show='editing' class="editing-label"  ng-model='task.name' type="text">
 				<div class="actions">
 					<a href="" ng-click='editing=!editing'>edit</a>
 					<a href="" ng-click=work()>save</a>
