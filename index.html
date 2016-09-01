@@ -9,7 +9,11 @@
 <body ng-app='todoApp'>
 	<div ng-controller= 'mainCtrl' class="list">
 			<h1>My TODO's</h1>
+<<<<<<< HEAD
 			<div class="item"  ng-class="{'editing-item': editing, 'edited':task.edited}" ng-repeat='task in tasks'>
+=======
+			<div class="item" ng-class="{editing-item: editing}" ng-repeat='task in tasks'>
+>>>>>>> 895fc86dd4e2f436ec82dd6767c5040986e3323c
 				<input type="checkbox" ng-model='task.completed'/>
 				<label ng-hide='editing'>{{task.name}}</label>
 				<input ng-change= 'task.edited= true' ng-blur= 'editing=false;' ng-show='editing' class="editing-label"  ng-model='task.name' type="text">
@@ -19,6 +23,7 @@
 					<a href="" class="delete">Delete</a>
 				</div>
 			</div>
+			<!-- Test purposes only -->
 			{{tasks}}
 	</div>
 	
