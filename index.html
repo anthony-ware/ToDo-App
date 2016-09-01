@@ -9,7 +9,7 @@
 <body ng-app='todoApp'>
 	<div ng-controller= 'mainCtrl' class="list">
 			<h1>My TODO's</h1>
-			<div ng-repeat='task in tasks'>
+			<div ng-repeat='todo in tasks'>
 				<input type="checkbox" ng-model='todo.completed'/>
 				<label class="editing-label" ng-hide='editing'>{{todo.name}}</label>
 				<input type="editing-label" ng-show='!editing' ng-model='todo.name' type="text">
