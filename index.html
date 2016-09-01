@@ -9,10 +9,10 @@
 <body ng-app='todoApp'>
 	<div ng-controller= 'mainCtrl' class="list">
 			<h1>My TODO's</h1>
-			<div class="item"  ng-class="{editing-item: editing}" ng-repeat='task in tasks'>
+			<div class="item"  ng-class="{'editing-item': editing, 'edited':task.edited}" ng-repeat='task in tasks'>
 				<input type="checkbox" ng-model='task.completed'/>
 				<label ng-hide='editing'>{{task.name}}</label>
-				<input ng-blur= 'editing=false;' ng-show='editing' class="editing-label"  ng-model='task.name' type="text">
+				<input ng-change= 'task.edited= true' ng-blur= 'editing=false;' ng-show='editing' class="editing-label"  ng-model='task.name' type="text">
 				<div class="actions">
 					<a href="" ng-click='editing=!editing'>Edit</a>
 					<a href="" ng-click=work()>Save</a>
