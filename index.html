@@ -16,7 +16,6 @@
 				<input ng-model='task.completed' type="checkbox" />
 				<label ng-hide='editing' class="editing-label">{{task.name}}</label>
 				<input ng-show='editing' class="editing-label"  ng-model='task.name' type="text">
-
 				<div class="actions">
 					<a href="" ng-click='editing=!editing'>edit</a>
 					<a href="" ng-click=work()>save</a>
