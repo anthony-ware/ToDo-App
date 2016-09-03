@@ -1,19 +1,32 @@
 angular.module('todoApp',[])
 
-.controller('mainCtrl',function($scope){
-	$scope.edited=function(){
-		alert('A change has been made!');
+.controller('mainCtrl', function($scope, dataService){
+	 dataService.getTasks(function(response){
+			console.log(response.data);
+			$scope.tasks = response.data;	
+			});
+	 $scope.deleteTask = function(task){
+	 	dataService.deleteTask(task)
+	 };
+
+	 $scope.saveTask = function(task){
+	 	dataService.saveTask(task)
+	 };
+
+	})
+.service('dataService', function($http){
+		this.getTasks = function(callback){
+			$http.get('mock/tasks.json')
+		.then(callback)
+	};
+	this.deleteTask=function(task){
+
 	};
 
-$scope.tasks= [
-{'name': 'Clean the house'},
-{'name': 'Eat Breakfast'},
-{'name': 'Go for a run'},
-{'name': 'Master Angular'},
-{'name': 'Read a book'},
-{'name': 'More Angular'}
-];
+	this.saveTask= function(task){
 
+	};
 });
+		
 
 
