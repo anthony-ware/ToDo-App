@@ -5,13 +5,15 @@ angular.module('todoApp',[])
 			console.log(response.data);
 			$scope.tasks = response.data;	
 			});
-	 $scope.deleteTask = function(task){
-	 	dataService.deleteTask(task)
+	 
+	 $scope.deleteTask = function(task, $index){
+	 	dataService.deleteTask(task);
+	 	$scope.tasks.splice($index, 1);
 	 };
 
-	 $scope.saveTask = function(task){
-	 	dataService.saveTask(task)
-	 };
+	 // $scope.saveTask = function(task){
+	 // 	dataService.saveTask(task)
+	 // };
 
 	})
 .service('dataService', function($http){

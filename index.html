@@ -16,8 +16,8 @@
 				<input ng-change= 'task.edited= true' ng-blur= 'editing=false;' ng-show='editing' class="editing-label"  ng-model='task.name' type="text">
 				<div class="actions">
 					<a href="" ng-click='editing=!editing'>Edit</a>
-					<a href="" ng-click="saveTask()">Save</a>
-					<a href="" class="deleteTask()">Delete</a>
+					<a href="" ng-click="saveTask(task)">Save</a>
+					<a href="" ng-click=deleteTask(task,$index) class="">Delete</a>
 				</div>
 			</div>
 			<!-- Test purposes only -->
