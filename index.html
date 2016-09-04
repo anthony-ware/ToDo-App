@@ -5,8 +5,13 @@
 	<title>ToDo List </title>
 	<script src="vendor/angular.min.js"></script>
 	<script src= 'js/app.js'></script>
+<<<<<<< HEAD
 	<script src= 'js/controllers/main.js'></script>
 	<script src= 'js/services/data.js'></script>
+=======
+	<script src="js/controllers/main.js"></script>
+	<script src="js/services/data.js"></script>
+>>>>>>> fa123014b2636a83942b9aa1be858b8371468ea5
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body ng-app='todoApp'>
@@ -15,8 +20,10 @@
 			<a href="">+ Add a new task</a>
 		</div>
 			<h1>My TODO's</h1>
-			<div class="item"  ng-class="{'editing-item': editing, 'edited':task.edited}" ng-repeat='task in tasks'>
+			<a href="" ng-click='addTask()'>+ Add new task</a>
+			<div class="item"  ng-class="{'editing-item': editing, 'edited':task.edited, 'completed':task.completed}" ng-repeat="task in tasks| orderBy:'completed'" ng-init= "task.completed = false">
 				<input type="checkbox" ng-model='task.completed'/>
+				<span ng-click= ></span>
 				<label ng-hide='editing'>{{task.name}}</label>
 				<input ng-change= 'task.edited= true' ng-blur= 'editing=false;' ng-show='editing' class="editing-label"  ng-model='task.name' type="text">
 				<div class="actions">
