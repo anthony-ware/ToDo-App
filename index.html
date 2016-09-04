@@ -12,8 +12,10 @@
 <body ng-app='todoApp'>
 	<div ng-controller= 'mainCtrl' class="list">
 			<h1>My TODO's</h1>
-			<div class="item"  ng-class="{'editing-item': editing, 'edited':task.edited}" ng-repeat='task in tasks'>
+			<a href="" ng-click='addTask()'>+ Add new task</a>
+			<div class="item"  ng-class="{'editing-item': editing, 'edited':task.edited, 'completed':task.completed}" ng-repeat="task in tasks| orderBy:'completed'" ng-init= "task.completed = false">
 				<input type="checkbox" ng-model='task.completed'/>
+				<span ng-click= ></span>
 				<label ng-hide='editing'>{{task.name}}</label>
 				<input ng-change= 'task.edited= true' ng-blur= 'editing=false;' ng-show='editing' class="editing-label"  ng-model='task.name' type="text">
 				<div class="actions">
@@ -23,7 +25,7 @@
 				</div>
 			</div>
 			<!-- Test purposes only -->
-			{{tasks}}
+			<!-- {{tasks}} -->
 	</div>
 	
 </body>

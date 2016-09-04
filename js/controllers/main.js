@@ -5,7 +5,7 @@ angular.module('todoApp')
 .controller('mainCtrl', function($scope, dataService){
 	 $scope.addTask= function(){
 	 	let task = {name:"This is a new task."};
-	 	$scope.tasks.push(task);
+	 	$scope.tasks.unshift(task);
 	 };
 
 	 dataService.getTasks(function(response){
