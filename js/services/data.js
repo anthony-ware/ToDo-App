@@ -9,7 +9,5 @@ angular.module('todoApp')
 
 	};
 
-	this.saveTask= function(task){
-
-	};
+	
 });

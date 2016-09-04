@@ -6,7 +6,6 @@ angular.module('todoApp')
 	 $scope.addTask= function(){
 	 	let task = {name:"This is a new task."};
 
-	 	$scope.tasks.push(task);
 	 	$scope.tasks.unshift(task);
 
 	 };
