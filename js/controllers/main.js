@@ -20,8 +20,9 @@ angular.module('todoApp')
 	 	$scope.tasks.splice($index, 1);
 	 };
 
-	 $scope.saveTask = function(task){
+	 $scope.saveTask = function(task, $index){
 	 	dataService.saveTask(task);
+	 	
 	 };
 
 	})
